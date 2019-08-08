@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+#nav{
+	border:1px solid #000;
+	width:200px;
+	float:left;
+	margin:0 auto;
+}
+#separate{
+	text-align:center;
+}
+#tag{
+	font-size: 16px;
+	height: 18px;
+}
+#tagDetails{
+	font-size: 14px;
+	color:#646464;
+}
+#tagDetails2{
+	height:280px;
+	font-size: 14px;
+	color:#646464;
+	overflow-y:scroll;
+}
+.loginInput{
+	width:100px;
+}

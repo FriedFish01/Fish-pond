@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="DeliciousFoods">
+        <wb-resource deploy-path="/" source-path="/WebRoot"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/WebRoot/WEB-INF/lib"/>
+        <property name="java-output-path" value="/DeliciousFoods/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/DeliciousFoods4.0_Hui"/>
+    </wb-module>
+</project-modules>

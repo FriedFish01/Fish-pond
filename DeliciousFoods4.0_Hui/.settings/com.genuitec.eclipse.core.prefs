@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+validator.Checked=WebRoot/hui/lib/ueditor/1.4.3/jsp/controller.jsp,WebRoot/H_ui/lib/zTree/v3/api/cn,WebRoot/H_ui/charts-7.html,WebRoot/H_ui/charts-6.html,WebRoot/H_ui/lib/ueditor/1.4.3/jsp/controller.jsp,WebRoot/H_ui/login.html,WebRoot/script
+validator.Revalidate=true
+validator.Unchecked=WebRoot/script/jquery-1.10.2.js

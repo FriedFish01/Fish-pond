@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+*{
+	margin: 0 auto;
+    padding: 5px;
+	position:relative;
+}
+.clear{
+	clear:both;
+}
+hr{
+	height:1px;
+	border:none;
+	border-top:2px dotted gray;
+}
+#page{
+	width:900px;
+	height:600px;
+
+}

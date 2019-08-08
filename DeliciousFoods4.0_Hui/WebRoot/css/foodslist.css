@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+*{
+	margin: 0 auto;
+    padding: 5px;
+}
+.clear{
+	clear:both;
+}
+hr{
+	height:1px;
+	border:none;
+	border-top:2px dotted gray;
+}
+
+#corpTile{
+	display:inline;
+	float:left;
+	font-size: 23pt;
+}
+#container{
+	height:570px;
+	overflow-y: scroll;
+}
+.product{
+	float:left;
+	width:29%;
+	text-align:center;
+}
+.productList{
+	float:left;
+	width:70%;
+	text-align:center;
+}
+.productDetail{
+	float:left;
+	width:120px;
+	height:150px;
+}
+.productDetail img{ width: 105%; height: 80%;}
+.mainTitle{
+	margin:0;
+}
+.pager{
+	text-align:center;
+}
+.detailsImage{
+	width:200px;
+}
+.foodsDesc{
+	height:170px;
+	color:#646464;
+	overflow-y:scroll;
+}
+#pa{
+	text-align:center;
+}

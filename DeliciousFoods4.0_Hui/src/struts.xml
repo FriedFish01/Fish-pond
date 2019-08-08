@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- class对应action配置文件applicationContext中的bean的id -->
+		<!-- name是url显示的那个 -->
+		<action name="index" class="indexAction" method="index">
+			<!-- 将结果转发到index.jsp -->
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="sidebar" class="sidebarAction">
+			<!-- 将结果转发到shared文件夹中的menu.jsp -->
+			<result name="success">/shared/menu.jsp</result>
+		</action>
+		<action name="foodslist" class="foodsAction" method="list">
+			<result name="success">/foodslist.jsp</result>
+		</action>
+		<action name="details" class="foodsAction" method="details">
+			<result name="success">/foodsdetails.jsp</result>
+		</action>
+		<action name="newslist" class="newsAction" method="list">
+			<result name="success">/newslist.jsp</result>
+		</action>
+		<action name="newsdetails" class="newsAction" method="details">
+			<result name="success">/newsdetails.jsp</result>
+		</action>
+		<action name="messages" class="messagesAction" method="list">
+			<result name="success">/messages.jsp</result>
+		</action>
+		<action name="saveMessages" class="messagesAction" method="save">
+			<result name="success" type="redirectAction">messages</result>
+		</action>
+		<action name="doLogin" class="usersAction" method="doLogin">
+			<result name="success" type="redirectAction">index</result>
+			<result name="login" type="chain">index</result>
+		</action>
+		<action name="signOut" class="usersAction" method="signOut">
+			<result name="success" type="redirectAction">index</result>
+		</action>
+		<action name="error" >
+			<result name="success">/error.jsp</result>
+		</action>
+		<action name="userJoin" >
+			<result name="success">/userjoin.jsp</result>
+		</action>
+		<action name="saveUsers" class="usersAction" method="saveUsers">
+			<result name="success" type="redirectAction">index</result>
+			<result name="join" type="chain">userJoin</result>
+		</action>
+	</package>
+	
+	<!-- 关于json的包 -->
+	<package name="json" namespace="/" extends="json-default">
+		<action name="comments" class="commentsAction" method="search">
+			<result name="success" type="json">
+			<param name="root">commentsList</param>
+				<param name="includeProperties">\[\d+\]\.(publishDate|content),\[\d+\]\.users\.userName</param>
+			</result>
+		</action>
+		<action name="addComments" class="commentsAction" method="addComments"></action>
+	</package>
+	
+	<!-- 后端处理action的包 -->
+	<package name="admin" namespace="/admin" extends="struts-default">
+	
+		<!-- 注意action一定在包的最后 ,一般要配一个引用自己写的拦截器和默认拦截器的说明-->
+		<!-- 拦截器 -->
+		<interceptors>
+			<interceptor name="security" class="com.delicious.interceptor.SecurityIntereceptor"></interceptor>
+			<interceptor-stack name="adminStack">
+				<interceptor-ref name="security"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 默认拦截器 -->
+		<default-interceptor-ref name="adminStack"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="error" type="redirectAction">
+				<param name="actionName">error</param>
+				<param name="namespace">/</param>
+			</result>
+		</global-results>
+		
+		<action name="foods_*" class="adminFoodsAction" method="{1}">
+			<result name="{1}_success">/admin/foods_{1}.jsp</result>
+			<result name="save_success" type="redirectAction">foods_list</result>
+			<result name="save_input" type="chain">foods_edit</result>
+			<result name="delete_success" type="redirectAction">foods_list</result>
+		</action>
+		<action name="messages_*" class="adminMessagesAction" method="{1}">
+			<result name="{1}_success">/admin/messages_{1}.jsp</result>
+			<result name="enable_success" type="redirectAction">messages_list</result>
+			<result name="disable_success" type="redirectAction">messages_list</result>
+		</action>
+		<action name="users_*" class="adminUsersAction" method="{1}">
+			<result name="{1}_success">/admin/users_{1}.jsp</result>
+			<result name="enable_success" type="redirectAction">users_list</result>
+			<result name="disable_success" type="redirectAction">users_list</result>
+		</action>
+		<action name="category_*" class="adminCategoryAction" method="{1}">
+			<result name="{1}_success">/admin/category_{1}.jsp</result>
+			<result name="save_success" type="redirectAction">category_list</result>
+			<result name="save_input" type="chain">category_edit</result>
+			<result name="delete_success" type="redirectAction">category_list</result>
+		</action>
+		
+		<action name="news_*" class="adminNewsAction" method="{1}">
+			<result name="{1}_success">/admin/news_{1}.jsp</result>
+			<result name="save_success" type="redirectAction">news_list</result>
+			<result name="save_input" type="chain">news_edit</result>
+			<result name="delete_success" type="redirectAction">news_list</result>
+		</action>
+
+	</package>
+
+</struts>    

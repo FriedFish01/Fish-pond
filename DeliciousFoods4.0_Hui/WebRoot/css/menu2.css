@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+#menu2{
+	margin:0 auto;
+	border:1px solid #000;
+	width:200px;
+	float:left;
+}
+.title{
+	width:100px;
+}
+#menu2 ul {
+	float:left;
+    margin-left: 1px;
+}
+#menu2 li {
+    display: inline;
+    line-height: 30px;
+    float:left;
+}
+#tagDetails{
+	font-size: 14px;
+	color:#646464;
+}

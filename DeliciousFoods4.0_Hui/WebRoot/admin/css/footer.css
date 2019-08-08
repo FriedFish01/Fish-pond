@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+#footer
+{
+	clear: both; /* 清除浮动元素格式 */  
+	position: relative;  
+	margin-top: 100%-14px; /* Footer 高度的负值 */  
+	text-align:center;
+ 	height: 20px;
+    font-size:14px;
+    background-color:#D9D9D9;
+    border-top: 1px gray solid;
+
+    padding:5px 0 5px 0;
+}
+#footer_p{
+	display:inline;
+}

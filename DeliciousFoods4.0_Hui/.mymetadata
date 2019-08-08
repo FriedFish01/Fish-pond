@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="DeliciousFoods4.0_Hui"
+  id="myeclipse.1546849503518"
+  context-root="/DeliciousFoods4.0_Hui"
+  j2ee-spec="6.0"
+  archive="DeliciousFoods4.0_Hui.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

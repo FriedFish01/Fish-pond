@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+*{
+	margin: 0 auto;
+    padding: 5px;
+}
+.clear{
+	clear:both;
+}
+hr{
+	height:1px;
+	border:none;
+	border-top:2px dotted gray;
+}
+
+#corpTile{
+	display:inline;
+	float:left;
+	font-size: 23pt;
+}
+.product{
+	float:left;
+	width:30%;
+	text-align:center;
+}
+.productList{
+	float:left;
+	width:70%;
+	text-align:center;
+}
+.productDetail{
+	float:left;
+	width:22%;
+	border:1px solid blue;
+}
+.mainTitle{
+	margin:0;
+}
+.pager{
+	text-align:center;
+}
+.messagesButton{
+	float:right;	
+}
+.title{
+	font-size:22px;
+}
+.content{
+	font-size:18px;
+	color:#4B4B4B;
+}
