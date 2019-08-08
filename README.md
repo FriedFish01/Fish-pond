@@ -1,3 +1,2 @@
 # Fish-pond
-The point of my practice and learning.
-it was based on SSH and named DiliciousFoods
+基于SSH实现的美食网站，包括用户端和管理端代码
